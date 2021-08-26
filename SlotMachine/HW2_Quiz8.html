@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>滾輪搖奬程式</title>
+	<style type="text/css">
+	body {
+		background:url('money.jpg');
+		background-position:fixed;
+		background-color: white
+	}
+/*	}
+	td.fruit{
+		
+		margin:0px 0px 0px 50px;
+	}
+*/
+/*	.bet{
+
+		width: 3px;
+		height: 3px;
+	}*/
+
+</style>
+
+</head>
+<body>
+	<div></div>
+	<p><center><input type="button" id = "start" value ="小瑪莉搖下去!!!" align="center">
+		<div id = "999"> </div></center>
+		<table border="3.5" align="center" cellpadding="50" cellspacing="0"  width="600" height="600" >
+			<tr>	
+				<td id="1"  class="fruit" style="background:url('1.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="2"  class="fruit" style="background:url('2.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="3"  class="fruit" style="background:url('3.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="4"  class="fruit" style="background:url('4.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+			</tr>
+			<tr>
+				<td id="12"  class="fruit" style="background:url('12.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="13" colspan="2" rowspan="2" align="center" style="background:url('sara.jpg');
+				background-position:center;background-size:cover;"></td>
+
+				<td id="5"  class="fruit" style="background:url('5.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+			</tr>
+			<tr>
+				<td id="11"  class="fruit" style="background:url('11.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="6"  class="fruit" style="background:url('6.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+			</tr>
+			<tr>
+				<td id="10"  class="fruit" style="background:url('10.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="9"   class="fruit" style="background:url('9.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="8"  class="fruit" style="background:url('8.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+
+				<td id="7"  class="fruit" style="background:url('7.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+			</tr>
+		</table><br>
+
+		<table style="background-color:white" border="1" align="center" cellpadding="45" cellspacing="0" >
+			
+			<tr>
+				<td id="b1" style="background:url('1.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b2" style="background:url('2.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b3" style="background:url('3.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b4" style="background:url('4.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b5" style="background:url('5.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b6" style="background:url('6.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b7" style="background:url('7.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b8" style="background:url('8.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b9" style="background:url('9.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b10"  style="background:url('10.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b11" style="background:url('11.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+				<td id="b12" style="background:url('12.jpg');background-position:center;background-size:cover;opacity:1;"></td>
+			</tr>
+			<tr>
+				<td id = "t1"><input id = "r1" type="radio" name = "radioName" value = "b1" ></td>
+				<td id = "t2"><input id = "r2" type="radio" name = "radioName" value = "b2" ></td>
+				<td id = "t3"><input id = "r3" type="radio" name = "radioName" value = "b3" ></td>
+				<td id = "t4"><input id = "r4" type="radio" name = "radioName" value = "b4" ></td>
+				<td id = "t5"><input id = "r5" type="radio" name = "radioName" value = "b5" ></td>
+				<td id = "t6"><input id = "r6" type="radio" name = "radioName" value = "b6" ></td>
+				<td id = "t7"><input id = "r7" type="radio" name = "radioName" value = "b7" ></td>
+				<td id = "t8"><input id = "r8" type="radio" name = "radioName" value = "b8" ></td>
+				<td id = "t9"><input id = "r9" type="radio" name = "radioName" value = "b9" ></td>
+				<td id = "t10"><input id = "r10" type="radio" name = "radioName" value = "b10" ></td>
+				<td id = "t11"><input id = "r11" type="radio" name = "radioName" value = "b11" ></td>
+				<td id = "t12"><input id = "r12" type="radio" name = "radioName" value = "b12" ></td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			var rad;
+			var opacity;
+			var setClock;
+			var blinkSet;
+			var rebet;
+			var p = 1;
+			var position = 0;
+			var frt = document.getElementsByClassName("fruit");
+			var first = 0;
+			var rand = parseInt(Math.random()*10 + 50);
+			var time = 950;
+			var betFinal;
+			
+			function twinkle() {
+				refresh(); //先重設
+				$id("start").disabled = true; //按鈕不給按
+				rad = document.getElementsByName("radioName"); //radio不給下注
+				for(var i of rad)
+					i.disabled = true;
+
+				$id(999).innerHTML = "<embed src='start.mp3' width='0' height='0'></embed>";
+				blink();
+				var rgb =  new Array(3);
+
+				//隨機決定開始的表格border顏色
+				for(var j = 0; j < rgb.length; j++)
+					rgb[j] = parseInt(Math.random()*256);
+				for(var i = 1; i <= 12; i++){
+					$id(i).style.opacity = 1;
+					$id(i).style.borderColor = "rgb("+rgb[0]+","+rgb[1]+","+rgb[2]+")";
+					$id(i).style.borderWidth = "2px";
+
+				}
+			}
+ 
+			function blink(){
+				blinkSet = setInterval(startGame,400);
+
+			}
+
+			function startGame(){
+				if(first > 6){  //閃大於6次就跳出準備rolling
+					clearInterval(blinkSet);
+					clock();
+				}
+				else{
+					first++;
+					if(first % 2 == 0){	
+						for(var i of frt)		
+							i.style.opacity = 0.5;
+					}
+					else{
+						for(var i of frt)
+							i.style.opacity = 1;
+					}
+				}
+			}
+
+			function clock(){
+				if(position < 7) //前面六個數度遞增
+					time -= 150;
+				else if(rand - position > 7) //倒數6次前高速運作
+					time = 100;
+
+				else
+					time += 200;  //倒數六個速度遞減
+
+				setClock = setTimeout(roll,time);
+			}	
+
+			function roll() {
+				if(position < rand){  //小於rand
+					for(var i = 1; i <= 12; i++){	//通通變淡
+						$id(i).style.opacity = 0.5;
+						$id(i).style.borderColor = "black";
+						$id(i).style.borderWidth = "1px";
+					}
+
+					position++;	
+
+
+					if( position % 12 == 0) //決定哪一個要變身+黃色外框
+						p = 12;
+					else
+						p = position % 12;
+
+					$id(p).style.opacity = 1;
+					$id(p).style.borderColor = "yellow";
+					$id(p).style.borderWidth = "1.5px";
+					$id(999).innerHTML = "<embed src='dot.mp3' width='0' height='0'></embed>";
+					clock();
+				}
+				else { //最後落點開獎後畫面
+
+					final();
+				}
+			}
+
+			function final(){
+				var obj = document.getElementsByName("radioName");  //找出被check的radio圖案          
+             		for(i = 0; i < obj.length; i++){  
+                  		if(obj[i].checked) 
+                          betFinal = obj[i].value;  //下注的圖案 
+                  }                  	  
+              	     
+				
+				$id("b"+p).style.borderWidth = "5px";
+				
+				if(betFinal == "b"+p){  //如果所選的跟跑出來的圖案一樣(中獎)
+					$id(p).style.background = "url('money_"+ p +".png')";	//金額翻牌
+					$id(p).style.backgroundPosition = "center";
+					$id(p).style.backgroundSize = "cover";	
+					$id(13).style.background = "url('money.gif')"; //噴錢
+					$id(13).style.backgroundPosition = "center";
+					$id(13).style.backgroundSize = "cover";
+					$id("b"+p).style.borderColor = "#00ff00";//框出結果圖案
+					$id("t"+p).innerHTML = "<span style='color:blue; background-color:yellow'><b>中獎</b></sapn>";
+					$id(999).innerHTML = "<embed src='money.mp3' width='0' height='0'></embed>";
+
+				}
+
+				else{ //沒中獎
+
+					$id(13).style.background = "url('cry.jpg')"; //不能接受
+					$id(13).style.backgroundPosition = "center";
+					$id(13).style.backgroundSize = "cover";
+					$id("b"+p).style.borderColor = "red";//框出結果圖案
+					$id("t"+p).innerHTML = "<span style='color:red'><b>槓龜</b></sapn>";
+					$id(999).innerHTML = "<embed src='cry.mp3' width='0' height='0'></embed>";
+
+				}
+					
+				$id("start").disabled = false; //按鈕恢復
+				for(var i of rad)  //radio 恢復
+					i.disabled = false;
+				document.getElementById("start").value = "再玩一次";
+				resultClock = setTimeout(rebet,5000);
+
+
+			}
+
+			function rebet(){
+				//重設槓龜
+				$id("t"+p).innerHTML = "<input id = t"+ p +" type='radio' name = 'radioName' value = b"+ p +" >";
+				clearTimeout(resultClock);
+
+			}
+
+			function refresh(){
+				$id(p).style.background = "url('" + p + ".jpg')"; //中獎圖案歸位
+		    	$id(p).style.backgroundPosition = "center";
+				$id(p).style.backgroundSize = "cover";
+				$id("b"+p).style.borderColor = "black";//框出結果圖案歸位
+				$id("b"+p).style.borderWidth = "1px";
+
+				position = 0;	
+				first = 0;
+				time = 950;
+				rand = parseInt(Math.random()*10 + 50);
+				$id(13).style.background = "url('sara.jpg')";//中間主圖歸位
+		    	$id(13).style.backgroundPosition = "center";
+				$id(13).style.backgroundSize = "cover";
+
+			// window.location.reload();
+			}
+
+			function $id(id){
+				return document.getElementById(id);
+			}
+
+			function init(){
+				document.getElementById("start").onclick = twinkle;
+				// document.getElementById("start").onmousedown = refresh;
+			}
+
+	window.onload = init;
+</script>
+</body>
+</html>
