@@ -1,5 +1,5 @@
 # leader2345520.github.io/SlotMachine
-小瑪莉滾輪搖獎
+小瑪莉滾輪搖獎(https://leader2345520.github.io/SlotMachine/)
 
 <strong> 進入畫面 </strong>
 ![image](https://user-images.githubusercontent.com/35731887/131674679-342f1a9e-0439-4f0c-9b8a-504f18748e8e.png)
