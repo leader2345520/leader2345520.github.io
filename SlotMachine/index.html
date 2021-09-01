@@ -102,7 +102,7 @@
 			var position = 0;
 			var frt = document.getElementsByClassName("fruit");
 			var first = 0;
-			var rand = parseInt(Math.random()*10 + 50);
+			var rand;
 			var time = 950;
 			var betFinal;
 			
@@ -220,7 +220,7 @@
 					$id(13).style.backgroundPosition = "center";
 					$id(13).style.backgroundSize = "cover";
 					$id("b"+p).style.borderColor = "red";//框出結果圖案
-					$id("t"+p).innerHTML = "<span style='color:red'><b>槓龜</b></sapn>";
+					// $id("t"+p).innerHTML = "<span style='color:red'><b>槓龜</b></sapn>";
 					$id(999).innerHTML = "<embed src='cry.mp3' width='0' height='0'></embed>";
 
 				}
@@ -229,7 +229,7 @@
 				for(var i of rad)  //radio 恢復
 					i.disabled = false;
 				document.getElementById("start").value = "再玩一次";
-				resultClock = setTimeout(rebet,5000);
+				// resultClock = setTimeout(rebet,5000);
 
 
 			}
